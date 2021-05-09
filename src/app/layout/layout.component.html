@@ -1,0 +1,18 @@
+<table>
+  <tbody>
+    <tr>
+      <td *ngFor="let number of numbersOne">
+        <span *ngIf="(number == 10) as value; else isNotTen">{{value}}</span>
+        <ng-template #isNotTen>
+          <span *ngIf="(number == 20) as value; else isNotTwenty">{{value}}</span>
+          <ng-template #isNotTwenty>
+            <span *ngIf="(number == 30) as value; else isNotThirty">{{value}}</span>
+            <ng-template #isNotThirty>
+              OT
+            </ng-template>
+          </ng-template>
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>
